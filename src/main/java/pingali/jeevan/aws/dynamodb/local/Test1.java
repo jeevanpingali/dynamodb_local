@@ -15,12 +15,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Test1 {
-    private static DynamoDBProxyServer server;
 
     public static void main(String[] args) throws Exception {
         System.setProperty("sqlite4java.library.path", "native-libs");
         String port = "8000";
-        server = ServerRunner.createServerFromCommandLineArgs(
+        DynamoDBProxyServer server = ServerRunner.createServerFromCommandLineArgs(
                 new String[]{"-inMemory", "-port", port});
         server.start();
 
